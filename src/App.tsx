@@ -7,8 +7,8 @@ import { Typography } from "antd";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Transactions from "./components/Transactions";
-import {Categories} from "./components/Categories";
-const { Header, Footer } = Layout;
+import {Categories} from "./components/Categories/Categories";
+const { Header } = Layout;
 const { Title } = Typography;
 
 function App() {
