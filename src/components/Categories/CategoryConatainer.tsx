@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { List, Button, Layout } from "antd";
 import { iCategories, iCategory } from "../../models/Categories";
 import { CategoryType } from "../../utils/CategoryType";
 import { PlusOutlined } from "@ant-design/icons";
 import CategoryItem from "./CategoryItem";
+import AppStateContext from "../AppState/AppState";
 const { Header, Content } = Layout;
 
 export const CategoryContainer = (props: { type: CategoryType }) => {
-  const [categories, setCategories] = useState<iCategories>({
-    "0": { name: "Harsh", id: "0", color: "#123456", type: props.type },
-    "1": { name: "Manish", id: "1", color: "#a343ff", type: props.type },
-  });
+  const {categories, setCategories} = React.useContext(AppStateContext);
 
   const handleChange = (name: string, id: string, color: string) => {
     setCategories({
@@ -40,6 +38,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
     console.log(newCategories);
     setCategories(newCategories);
   };
+  console.log(categories)
   return (
     <Layout 
       style={{
@@ -59,7 +58,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
             console.log(nextId);
             setCategories({
               ...categories,
-              [nextId]: { name: "New Category", id: nextId, color: "#91b6f2" },
+              [nextId]: { name: "New Category", id: nextId, color: "#91b6f2", type:props.type },
             });
           }}
         >
@@ -74,7 +73,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
         <List
           style={{ paddingLeft: "50px", paddingRight: "50px" }}
           dataSource={Object.keys(categories)
-            .filter((key) => !!categories[key])
+            .filter((key) => !!categories[key]  && categories[key].type === props.type)
             .map((key) => categories[key])}
           renderItem={(category) => (
             <CategoryItem
