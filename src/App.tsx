@@ -6,7 +6,7 @@ import { Layout } from "antd";
 import { Typography } from "antd";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Transactions from "./components/Transactions";
+import Transactions from "./components/Transactions/Transactions";
 import { Categories } from "./components/Categories/Categories";
 import { AppStateProvider } from "./components/AppState/AppState";
 const { Header } = Layout;

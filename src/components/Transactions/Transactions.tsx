@@ -1,11 +1,14 @@
 import React from "react";
 import { Layout } from "antd";
+import TransactionsHead from "./TransactionsHead";
 const { Content } = Layout;
 
 export const Transactions = () => {
   return (
     <Content>
-      <h1>Transactions</h1>
+      <Layout>
+        <TransactionsHead/>
+      </Layout>
     </Content>
   );
 };
