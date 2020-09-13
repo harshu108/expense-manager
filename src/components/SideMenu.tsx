@@ -10,7 +10,6 @@ import { NavLink,useLocation } from "react-router-dom";
 
 export const SideMenu = (props:any) => {
   let location = useLocation();
-  console.log(location);
   return (
     <div>
       <Menu defaultSelectedKeys={["/"]} selectedKeys={[location.pathname]} mode="inline" theme="dark">

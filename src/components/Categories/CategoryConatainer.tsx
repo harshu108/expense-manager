@@ -35,10 +35,8 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
       },
       {}
     );
-    console.log(newCategories);
     setCategories(newCategories);
   };
-  console.log(categories)
   return (
     <Layout 
       style={{
@@ -55,7 +53,6 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
             if (ids.length > 0) {
               nextId = parseInt(ids[ids.length - 1], 10) + 1;
             }
-            console.log(nextId);
             setCategories({
               ...categories,
               [nextId]: { name: "New Category", id: nextId, color: "#91b6f2", type:props.type },

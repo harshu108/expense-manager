@@ -41,7 +41,7 @@ export const CategoryItem = ({
         style={{
           border: "none",
           color: "white",
-          backgroundColor: category.color,
+          background: "none",
         }}
         onChange={(event) => {
           handleChange(event.target.value, category.id, category.color);

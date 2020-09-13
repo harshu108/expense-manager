@@ -12,13 +12,13 @@ const AppStateProvider = (props:{children:React.ReactNode})=>{
         "0": {
             name: "Harsh",
             id: "0",
-            color: "#123456",
+            color: "#12345659",
             type: CategoryType.Income
           },
           "1": {
             name: "Manish",
             id: "1",
-            color: "#a343ff",
+            color: "#a343ff59",
             type: CategoryType.Expense
           }  
     })
