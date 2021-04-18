@@ -40,7 +40,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
   return (
     <Layout 
       style={{
-        background: props.type === CategoryType.Expense ? "#fff7f7" : "#f8fff7",
+       // background: props.type === CategoryType.Expense ? "#fff7f7" : "#f8fff7",
         maxHeight:"100%"
       }}
     >
