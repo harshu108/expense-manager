@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import { List, Button, Layout } from "antd";
 import { iCategories, iCategory } from "../../models/Categories";
 import { CategoryType } from "../../utils/CategoryType";
 import { PlusOutlined } from "@ant-design/icons";
 import CategoryItem from "./CategoryItem";
 import AppStateContext from "../AppState/AppState";
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 export const CategoryContainer = (props: { type: CategoryType }) => {
   const {categories, setCategories} = React.useContext(AppStateContext);
-
+  
   const handleChange = (name: string, id: string, color: string) => {
     setCategories({
       ...categories,
@@ -41,7 +41,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
     <Layout 
       style={{
        // background: props.type === CategoryType.Expense ? "#fff7f7" : "#f8fff7",
-        maxHeight:"100%"
+        maxHeight:"95%"
       }}
     >
       <Header style={{ background: "none", border: "none" }}>
@@ -65,7 +65,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
       </Header>
       <Content style={{
         overflowY:"auto",
-        maxHeight: 500
+        // maxHeight: 500
       }}>
         <List
           style={{ paddingLeft: "50px", paddingRight: "50px" }}
@@ -82,6 +82,7 @@ export const CategoryContainer = (props: { type: CategoryType }) => {
           )}
         />
       </Content>
+      <Footer style={{ textAlign: 'center' }}></Footer>
     </Layout>
   );
 };

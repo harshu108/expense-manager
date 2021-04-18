@@ -8,15 +8,15 @@ const { Title } = Typography;
 ///* <Col flex="auto" lg={{ span: 12 }} style={{ background: "#fff7f7" }}>*/
 export const Categories = () => {
   return (
-    <Row style={{ height: "100%" }}>
+    <Row style={{ height: "100%", overflow:"hidden" }}>
      
-     <Col flex="auto" lg={{ span: 12 }} style={{ borderRight: "0.5px groove" }}>
+     <Col flex="auto" lg={{ span: 12 }} style={{ height: "100%", borderRight: "0.5px groove" }}>
         <Title style={{ textAlign: "center", padding: "10px" }} level={3}>
           Expense
         </Title>
         <CategoryContainer type={CategoryType.Expense} />
       </Col>
-      <Col flex="auto" lg={{ span: 12 }}>
+      <Col flex="auto" lg={{ span: 12 }} style={{ height: "100%"}}>
         <Title style={{ textAlign: "center", padding: "10px" }} level={3}>
           Income
         </Title>
